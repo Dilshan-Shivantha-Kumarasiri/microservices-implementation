@@ -16,7 +16,7 @@ public class Converter {
         return modelMapper.map(userDTO, User.class);
     }
 
-    public UserDTO convertToEntity(User user){
+    public UserDTO convertToDto(User user){
         return modelMapper.map(user, UserDTO.class);
     }
 
