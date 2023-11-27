@@ -24,8 +24,8 @@ public class UserController {
 
     @ResponseBody
     @GetMapping(value = "{userId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public void getExistsUserData(@PathVariable int userId){
-        userService.getExistsUserData(userId);
+    public UserDTO getExistsUserData(@PathVariable int userId){
+        return userService.getExistsUserData(userId);
     }
 
 
