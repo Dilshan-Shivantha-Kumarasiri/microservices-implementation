@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    embedded-database-connection: hsqldb
+    generate-unique-name: true
+    url: "jdbc:mysql://localhost:3306/micro-services-homework-user?createDatabaseIfNotExist=true"
+    username: "root"
+    password: "1234"
+    hikari:
+      maximum-pool-size: 5
+
