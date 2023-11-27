@@ -31,7 +31,7 @@ public class UserController {
     public UserDTO getExistsUserData(@PathVariable int userId){
         return userService.getExistsUserData(userId);
     }
-    
+
 //    @ResponseBody
 //    @GetMapping(path = "/validate" ,consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 //    public String validatingUser(@RequestBody UserDTO userDTO){
