@@ -29,8 +29,7 @@ public class UserServiceImpl implements UserService {
     public UserDTO getExistsUserData(int userId) {
         Optional<User> getUser = userRepository.findById(userId);
         if (getUser.isEmpty()) throw new RuntimeException("user cannot found that id");
-        Iterator<User> iterator = getUser.stream().iterator();
-        System.out.println(iterator.next());
-        return converter.convertToDto(iterator.next());
+        return converter.convertToDto(getUser.get());
+
     }
 }
