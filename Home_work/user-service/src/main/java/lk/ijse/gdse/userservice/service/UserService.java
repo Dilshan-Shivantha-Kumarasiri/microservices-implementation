@@ -8,4 +8,6 @@ public interface UserService {
     void saveUser(UserDTO userDto);
 
     UserDTO getExistsUserData(int userId);
+
+    boolean validatingUser(UserDTO userDTO);
 }

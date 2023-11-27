@@ -32,4 +32,9 @@ public class UserServiceImpl implements UserService {
         return converter.convertToDto(getUser.get());
 
     }
+
+    @Override
+    public boolean validatingUser(UserDTO userDTO) {
+        return userRepository.existsById(userDTO.getUserId());
+    }
 }
