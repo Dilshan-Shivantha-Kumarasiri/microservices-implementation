@@ -10,3 +10,18 @@ server:
 spring:
   application:
     name: supplier-service
+
+  datasource:
+    hikari:
+      maximum-pool-size: 5
+    password: 1234
+    username: root
+    url: "jdbc:mysql://localhost:3306/micro-services-homework-supplier?createDatabaseIfNotExist=true"
+    driver-class-name: com.mysql.jdbc.Driver
+
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
