@@ -37,4 +37,9 @@ public class SupplierController {
                 "/"+supplierItem.getItemCategory(), ArrayList.class);
     }
 
+    @PostMapping
+    public void saveSupplier(){
+
+    }
+
 }
