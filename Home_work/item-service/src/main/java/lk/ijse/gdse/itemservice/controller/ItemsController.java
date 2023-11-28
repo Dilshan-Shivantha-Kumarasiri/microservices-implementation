@@ -31,12 +31,13 @@ public class ItemsController {
     }
 
 
-    @GetMapping(path = "/supplier",consumes = MediaType.APPLICATION_JSON_VALUE)
-    public List<ItemsDTO> getSupplierDetails(@RequestBody ItemsDTO itemsDTO){
+    @ResponseBody
+    @GetMapping(path = "/supplier/{supplierCode}/{itemCategory}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<ItemsDTO> getSupplierDetails(@PathVariable String supplierCode , @PathVariable String itemCategory){
         System.out.println("--------------");
-        System.out.println(itemsDTO.getSupplierCode());
-        System.out.println(itemsDTO.getItemCategory());
-        return itemService.getSupplierDetails(itemsDTO.getSupplierCode(),itemsDTO.getItemCategory());
+//        System.out.println(itemsDTO.getSupplierCode());
+//        System.out.println(itemsDTO.getItemCategory());
+        return itemService.getSupplierDetails(supplierCode,itemCategory);
     }
 
 }
