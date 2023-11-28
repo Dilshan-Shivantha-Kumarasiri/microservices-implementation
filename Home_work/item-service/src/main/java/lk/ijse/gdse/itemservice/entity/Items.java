@@ -19,4 +19,8 @@ public class Items {
     private String itemName;
     private double itemPrice;
     private int itemQty;
+    private String itemBrand;
+    private String itemCategory;
+    private String supplierCode;
+
 }

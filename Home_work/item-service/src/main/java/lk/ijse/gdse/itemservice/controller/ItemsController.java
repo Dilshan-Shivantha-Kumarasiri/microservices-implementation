@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 
 @RestController
 @RequestMapping("/api/v1/items")
@@ -23,6 +25,10 @@ public class ItemsController {
     @ResponseBody
     public ItemsDTO getItemDetails(@PathVariable int id){
         return itemService.getItemDetails(id);
+    }
+
+    public ArrayList<ItemsDTO> getSupplierDetails(){
+        return null;
     }
 
 }
