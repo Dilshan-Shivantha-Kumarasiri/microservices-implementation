@@ -3,6 +3,7 @@ package lk.ijse.gdse.supplierservice.controller;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.netflix.discovery.converters.wrappers.CodecWrappers;
+import lk.ijse.gdse.supplierservice.dto.SupplierDTO;
 import lk.ijse.gdse.supplierservice.dto.SupplierItem;
 import lk.ijse.gdse.supplierservice.entity.Supplier;
 import lk.ijse.gdse.supplierservice.service.SupplierService;
@@ -42,8 +43,8 @@ public class SupplierController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void saveSupplier(@RequestBody Supplier supplier){
-        supplierService.saveSupplier(supplier);
+    public void saveSupplier(@RequestBody SupplierDTO supplierDTO){
+        supplierService.saveSupplier(supplierDTO);
     }
 
 }
