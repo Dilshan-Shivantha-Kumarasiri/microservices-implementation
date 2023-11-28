@@ -6,4 +6,6 @@ import org.springframework.stereotype.Service;
 @Service
 public interface ItemService {
     void saveItem(ItemsDTO itemsDto);
+
+    ItemsDTO getItemDetails(int id);
 }
