@@ -5,6 +5,7 @@ import lk.ijse.gdse.itemservice.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +19,7 @@ public class ItemsController {
     ItemService itemService;
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void saveItems(ItemsDTO itemsDto){
+    public void saveItems(@RequestBody ItemsDTO itemsDto){
         itemService.saveItem(itemsDto);
     }
 
