@@ -11,6 +11,7 @@ import lombok.*;
 @Getter
 @Setter
 @Entity
+@ToString
 public class Items {
 
     @Id

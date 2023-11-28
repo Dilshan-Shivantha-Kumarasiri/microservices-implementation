@@ -8,6 +8,8 @@ import lk.ijse.gdse.itemservice.util.Converter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -28,5 +30,16 @@ public class ItemServiceImpl implements ItemService {
         Optional<Items> item = itemRepository.findById(id);
         if (item.isEmpty()) throw new RuntimeException("items cannot found");
         return converter.convertToDto(item.get());
+    }
+
+    @Override
+    public List<ItemsDTO> getSupplierDetails(String supplierCode, String category) {
+        ArrayList<ItemsDTO> getItems = new ArrayList<>();
+
+        List<Items> items = itemRepository.getItems(supplierCode, category);
+        for (Items getItem:items) {
+            getItems.add(converter.convertToDto(getItem));
+        }
+        return getItems;
     }
 }
