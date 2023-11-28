@@ -32,7 +32,9 @@ public class SupplierController {
         System.out.println(supplierItem.getSupplierCode());
         System.out.println(supplierItem.getItemCategory());
 
-        return restTemplate.getForObject("http://localhost:8082/api/v1/items/supplier/1AG5478965RRS/mobile phone", ArrayList.class);
+        return restTemplate.getForObject("http://localhost:8082/api/v1/items/supplier/"+
+                supplierItem.getSupplierCode()+
+                "/"+supplierItem.getItemCategory(), ArrayList.class);
     }
 
 }
