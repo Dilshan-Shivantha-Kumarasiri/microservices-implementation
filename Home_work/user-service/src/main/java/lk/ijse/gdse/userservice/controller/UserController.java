@@ -32,14 +32,11 @@ public class UserController {
         return userService.getExistsUserData(userId);
     }
 
-//    @ResponseBody
-//    @GetMapping(path = "/validate" ,consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-//    public String validatingUser(@RequestBody UserDTO userDTO){
-//        return restTemplate.postForObject("http://localhost:8083/api/v1/orderDetails",userDTO,String);
-//
-//
-//
-////        return userService.validatingUser(userDTO);
-//    }
+    @ResponseBody
+    @GetMapping(path = "/validate" ,consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String validatingUser(@RequestBody UserDTO userDTO){
+        return restTemplate.postForObject("http://localhost:8083/api/v1/orderDetails",userDTO,String.class);
+//        return userService.validatingUser(userDTO);
+    }
 
 }
