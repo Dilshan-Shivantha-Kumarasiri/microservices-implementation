@@ -1,9 +1,9 @@
 package lk.ijse.gdse.supplierservice.controller;
 
+import lk.ijse.gdse.supplierservice.dto.SupplierItem;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
@@ -16,10 +16,10 @@ public class SupplierController {
     RestTemplate restTemplate;
 
 
-    @GetMapping
-    public void supplier(String supplierId , String category){
-        System.out.println(supplierId);
-        System.out.println(category);
+    @GetMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void supplier(@RequestBody SupplierItem supplierItem){
+        System.out.println(supplierItem.getSupplierCode());
+        System.out.println(supplierItem.getItemCategory());
 //        return restTemplate.getForObject("")
     }
 
