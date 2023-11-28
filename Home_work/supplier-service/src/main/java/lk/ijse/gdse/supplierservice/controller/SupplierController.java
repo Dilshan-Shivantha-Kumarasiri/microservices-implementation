@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.netflix.discovery.converters.wrappers.CodecWrappers;
 import lk.ijse.gdse.supplierservice.dto.SupplierItem;
+import lk.ijse.gdse.supplierservice.entity.Supplier;
+import lk.ijse.gdse.supplierservice.service.SupplierService;
 import lk.ijse.gdse.supplierservice.util.RestConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -23,6 +25,8 @@ public class SupplierController {
     RestTemplate restTemplate;
     @Autowired
     RestConverter restConverter;
+    @Autowired
+    SupplierService supplierService;
 
 
 
@@ -37,9 +41,9 @@ public class SupplierController {
                 "/"+supplierItem.getItemCategory(), ArrayList.class);
     }
 
-    @PostMapping
-    public void saveSupplier(){
-
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void saveSupplier(@RequestBody Supplier supplier){
+        supplierService.saveSupplier(supplier);
     }
 
 }
