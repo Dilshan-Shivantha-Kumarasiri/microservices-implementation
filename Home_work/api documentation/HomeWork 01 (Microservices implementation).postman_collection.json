@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "1f6ae67f-fbf6-4643-9ae7-367ec5a760bc",
+		"name": "HomeWork 01 (Microservices implementation)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28171920",
+		"_collection_link": "https://www.postman.com/universal-shuttle-890622/workspace/next-travel-api/collection/28171920-1f6ae67f-fbf6-4643-9ae7-367ec5a760bc?action=share&source=collection_link&creator=28171920"
+	},
+	"item": [
+		{
+			"name": "save user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\":\"Dilshan Shivantha\",\r\n    \"userEmail\":\"dilshan@gmail.com\",\r\n    \"userAddress\":\"Homgama\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "Dilshan shivantha",
+							"disabled": true
+						},
+						{
+							"key": "userEmail",
+							"value": "dilshan@2001.gmail.com",
+							"disabled": true
+						},
+						{
+							"key": "userAddress",
+							"value": "Homagama",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get selected user details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save items",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"itemName\":\"iphone 13 pro\",\r\n    \"itemPrice\":250000.00,\r\n    \"itemQty\":15,\r\n    \"itemBrand\":\"iphone\",\r\n    \"itemCategory\":\"mobile phone\",\r\n    \"supplierCode\":\"1AG5478965RRS\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/v1/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"v1",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get selected item details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/v1/items/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"v1",
+						"items",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get item details (supplier)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"supplierCode\":\"1AG5478965RRS\",\r\n    \"itemCategory\":\"mobile phone\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/api/v1/supplier",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"v1",
+						"supplier"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save supplier (restTemplate)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"supplierName\":\"Apple\",\r\n    \"supplierCode\":\"1AG5478965RRS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/user/supplier",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"supplier"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
