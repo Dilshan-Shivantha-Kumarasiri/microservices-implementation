@@ -1,5 +1,6 @@
 package lk.ijse.gdse.userservice.controller;
 
+import lk.ijse.gdse.userservice.dto.SupplierDTO;
 import lk.ijse.gdse.userservice.dto.UserDTO;
 import lk.ijse.gdse.userservice.service.UserService;
 import org.apache.tomcat.util.json.JSONFilter;
@@ -33,10 +34,10 @@ public class UserController {
     }
 
     @ResponseBody
-    @GetMapping(path = "/validate" ,consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String validatingUser(@RequestBody UserDTO userDTO){
-        return restTemplate.postForObject("http://localhost:8083/api/v1/orderDetails",userDTO,String.class);
-//        return userService.validatingUser(userDTO);
+    @PostMapping(value = "/supplier",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+    public String saveSupplier(@RequestBody SupplierDTO supplierDTO){
+       return restTemplate.postForObject("http://localhost:8083/api/v1/supplier",supplierDTO,String.class);
     }
+
 
 }
