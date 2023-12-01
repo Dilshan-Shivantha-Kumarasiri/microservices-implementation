@@ -3,13 +3,11 @@ package lkijse.gdse.itemservice.controller;
 import lkijse.gdse.itemservice.dto.ItemDTO;
 import lkijse.gdse.itemservice.services.impl.ItemServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
-@RequestMapping("api/v1/user")
+@RequestMapping("api/v1/item")
 public class ItemController {
 
     @Autowired
@@ -19,9 +17,12 @@ public class ItemController {
     RestTemplate restTemplate;
 
 
+//    @ResponseBody
     @PostMapping
-    public String saveUserDetails(){
-        return restTemplate.getForObject("http://localhost//8081/api/v1/user",String.class);
+    public ItemDTO saveItemDetails(@RequestBody ItemDTO itemDTO){
+        System.out.println(itemDTO.toString());
+        itemDTO.setItemName("iphone 14 pro");
+        return itemDTO;
     }
 
 }
