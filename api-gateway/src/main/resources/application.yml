@@ -1,0 +1,26 @@
+server:
+  port: 8090
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: "http://loclhost:8761/Eureka"
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      routes:
+       - id: user-service
+         uri : lb://user-service
+         predicates:
+           -path=api/v1/user/**
+
+       - id: item-service
+         uri : lb://item-service
+         predicates:
+           -path=api/v1/item/**
