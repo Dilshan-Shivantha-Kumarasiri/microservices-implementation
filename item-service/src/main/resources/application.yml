@@ -3,4 +3,4 @@ spring:
     name: item-service
 
   config:
-    import: "optional:configserver:http://localhost/8083"
+    import: "optional:configserver:http://localhost:8083"

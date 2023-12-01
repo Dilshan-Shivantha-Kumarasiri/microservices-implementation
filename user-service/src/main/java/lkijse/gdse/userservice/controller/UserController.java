@@ -25,7 +25,7 @@ public class UserController {
 
     @PostMapping
     public UserItem saveUserItem(@RequestBody UserItem userItem){
-        return restTemplate.postForObject("http://localhost:8081/test/api/v1/item",userItem, UserItem.class);
+        return restTemplate.postForObject("http://localhost:8082/test/api/v1/item",userItem, UserItem.class);
     }
 
 
